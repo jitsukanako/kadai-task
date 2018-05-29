@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Message;  
+use App\tasks;  
 
 class TasksController extends Controller
 {
@@ -35,7 +35,6 @@ class TasksController extends Controller
             'tasks' => $tasks,
         ]);
     }
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,14 +42,15 @@ class TasksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+     
     public function store(Request $request)
     {
-        
-        $tasks = new tasks;
+     $tasks = new tasks;
         $tasks->content = $request->content;
         $tasks->save();
 
         return redirect('/');
+        
     }
 
     /**
@@ -90,6 +90,7 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     
     public function update(Request $request, $id)
     {
          $tasks = tasks::find($id);
