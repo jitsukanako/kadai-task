@@ -4,6 +4,7 @@
 
     <h1>メッセージ新規作成ページ</h1>
 
+  
     {!! Form::model($tasks, ['route' => 'tasks.store']) !!}
 
         {!! Form::label('content', 'メッセージ:') !!}
@@ -12,7 +13,5 @@
         {!! Form::submit('投稿') !!}
 
     {!! Form::close() !!}
-
-
 
 @endsection
