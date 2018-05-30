@@ -7,8 +7,8 @@
   
     {!! Form::model($tasks, ['route' => 'tasks.store']) !!}
   
-   {!! Form::label('title', 'status:') !!}
-        {!! Form::text('title') !!}
+   {!! Form::label('status', 'status:') !!}
+        {!! Form::text('status') !!}
 
     {!! Form::label('content', 'task:') !!}
         {!! Form::text('content') !!}
