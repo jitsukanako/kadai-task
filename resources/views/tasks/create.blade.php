@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>メッセージ新規作成ページ</h1>
+    <h1>task新規作成ページ</h1>
 
   
     {!! Form::model($tasks, ['route' => 'tasks.store']) !!}
@@ -10,7 +10,7 @@
    {!! Form::label('title', 'タイトル:') !!}
         {!! Form::text('title') !!}
 
-    {!! Form::label('content', 'メッセージ:') !!}
+    {!! Form::label('content', 'task:') !!}
         {!! Form::text('content') !!}
 
         {!! Form::submit('投稿') !!}

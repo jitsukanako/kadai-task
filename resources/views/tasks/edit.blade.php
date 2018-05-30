@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <h1>id: {{ $tasks->id }} のメッセージ編集ページ</h1>
+  <h1>id: {{ $tasks->id }} のtask編集ページ</h1>
 
   
    
@@ -10,7 +10,7 @@
   {!! Form::label('title', 'タイトル:') !!}
         {!! Form::text('title') !!}
 
-        {!! Form::label('content', 'メッセージ:') !!}
+        {!! Form::label('content', 'task:') !!}
         {!! Form::text('content') !!}
 
         {!! Form::submit('更新') !!}
