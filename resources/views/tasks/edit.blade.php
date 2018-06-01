@@ -3,8 +3,6 @@
 @section('content')
   <h1>id: {{ $tasks->id }} のtask編集ページ</h1>
 
-  <div class="row">
-        <div class="col-xs-6">
    
           {!! Form::model($tasks, ['route' => ['tasks.update', $tasks->id], 'method' => 'put']) !!}
           
@@ -22,7 +20,6 @@
 
           {!! Form::close() !!}
           
-        </div>
-  </div>
+
 
 @endsection
