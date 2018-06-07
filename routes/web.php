@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});    
+Route::get('/', 'TasksController@index');
 
-//Route::get('/', 'TasksController@index');
+
 
 Route::resource('tasks', 'TasksController');
 
@@ -29,6 +26,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);
+    
 });
 
 ?>
