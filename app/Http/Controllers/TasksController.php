@@ -96,6 +96,31 @@ class TasksController extends Controller
 
         return redirect('/');
     }
+    
+     public function edit($id)
+   {
+         $tasks = tasks::find($id);
+
+        return view('tasks.edit', [
+            'tasks' => $tasks,
+       ]);
+    }
+ public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'content' => 'required|max:191',
+        ]);
+         $tasks = tasks::find($id);
+         $tasks->status = $request->status; 
+       $tasks->content = $request->content;
+        $tasks->save();
+
+        return redirect('/');
+    }
+
+    
+    
+    
   
 }
 //    /**//
